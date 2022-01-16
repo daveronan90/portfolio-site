@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
 
 export default function ContainerBlock({ children, ...customMeta }) {
   const router = useRouter();
@@ -43,10 +42,9 @@ export default function ContainerBlock({ children, ...customMeta }) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <main className="w-full h-screen">
+      <main className="w-full h-screen font-poppins">
         <Navbar />
         <div>{children}</div>
-        <Footer />
       </main>
     </div>
   );
