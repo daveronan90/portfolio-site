@@ -12,8 +12,10 @@ export default function Home() {
         style={{
           clipPath: "polygon(30% 0, 100% 0, 100% 100%, 0% 100%)",
           left: "55%",
+          background:
+            "radial-gradient(50% 50% at 50% 50%, rgba(36, 110, 185, 0.8) 0%, #246EB9 95.83%)",
         }}
-        className="fixed bg-cta bottom-0 right-0 top-0 z-0"
+        className="fixed bottom-0 right-0 top-0 z-0"
       />
       <main className="container mx-auto h-screen relative flex flex-col justify-between">
         <div className="flex w-full justify-center items-center h-full">

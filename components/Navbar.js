@@ -13,11 +13,6 @@ const navItems = [
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <div className="mt-4 mx-24 fixed top-0 right-0 left-0 z-10">
@@ -90,13 +85,27 @@ function NavItem({ pageName, url }) {
 
   return (
     <Link href={url}>
-      <a
-        className={
-          router.asPath === url ? "text-cta border-b-2 border-cta px-2" : "px-2"
-        }
-      >
-        {pageName}
-      </a>
+      {url === "/about" ? (
+        <a
+          className={
+            router.asPath === url
+              ? "text-bwhite border-b-2 border-bwhite px-2"
+              : "px-2"
+          }
+        >
+          {pageName}
+        </a>
+      ) : (
+        <a
+          className={
+            router.asPath === url
+              ? "text-cta border-b-2 border-cta px-2"
+              : "px-2"
+          }
+        >
+          {pageName}
+        </a>
+      )}
     </Link>
   );
 }
