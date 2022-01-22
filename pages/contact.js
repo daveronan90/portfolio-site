@@ -8,10 +8,12 @@ export default function Contact() {
       title="Fox Web Development"
       description="Developing sites for companies, to bring them online."
     >
-      <main className="relative flex flex-wrap lg:h-screen lg:items-center">
-        <div className="w-full px-4 py-12 lg:w-1/2 sm:px-6 lg:px-8 sm:py-16 lg:py-24">
+      <main className="fixed inset-0 my-8 md:my-0 flex flex-wrap lg:items-center">
+        <div className="w-full px-4 py-12 lg:w-1/2 sm:px-6 lg:px-8 sm:py-16 lg:py-24 z-10">
           <div className="max-w-lg mx-auto text-center">
-            <h1 className="text-2xl font-bold sm:text-3xl">Get in touch.</h1>
+            <h1 className="text-2xl font-bold sm:text-3xl text-primary">
+              Get in touch.
+            </h1>
             <p className="mt-4 text-gray-500">
               I&apos;m glad to answer all of your questions
             </p>
@@ -111,7 +113,7 @@ export default function Contact() {
             <div className="flex items-center justify-between">
               <button
                 type="submit"
-                className="inline-block px-5 py-3 ml-3 text-sm font-medium text-bwhite bg-cta rounded-lg "
+                className="inline-block px-5 py-3 ml-3 text-sm font-medium text-bwhite bg-primary rounded-lg "
               >
                 Send
               </button>
@@ -120,19 +122,20 @@ export default function Contact() {
         </div>
 
         <div
-          className="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-full"
-          style={{ clipPath: "polygon(40% 0, 100% 0, 100% 100%, 10% 100%)" }}
-        >
-          <Image
-            className="absolute inset-0 object-cover w-full h-full filter brightness-50"
-            src="/assets/image/contact.jpeg"
-            alt="Contact Image"
-            layout="fill"
-          />
-        </div>
-        <div className="absolute w-full bottom-0 flex items-center justify-center">
-          <Footer />
-        </div>
+          className="lg:fixed z-0 top-0 bottom-0 right-0 left-1/2 bg-center bg-cover filter brightness-50"
+          style={{
+            clipPath: "polygon(40% 0, 100% 0, 100% 100%, 10% 100%)",
+            backgroundImage: "url('/assets/image/contact.jpeg')",
+          }}
+        />
+
+        <div
+          className="fixed lg:hidden z-0 top-0 bottom-0 right-0 left-0 bg-center bg-cover filter brightness-50"
+          style={{
+            clipPath: "polygon(100% 50%, 0% 100%, 100% 100%)",
+            backgroundImage: "url('/assets/image/contact.jpeg')",
+          }}
+        />
       </main>
     </ContainerBlock>
   );

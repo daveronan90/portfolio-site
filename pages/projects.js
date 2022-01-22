@@ -7,8 +7,26 @@ export default function Projects() {
       title="Fox Web Development"
       description="Developing sites for companies, to bring them online."
     >
-      <section className="bg-bwhite container mx-auto flex items-center justify-center md:pt-24 md:h-screen">
-        <div className="max-w-screen-xl px-4 py-16 mx-auto space-y-8 sm:px-6 lg:px-8 flex flex-col justify-around h-screen w-full">
+      
+      <main className="bg-bwhite container mx-auto flex items-center justify-center fixed inset-0 my-8 md:my-0">
+      <div
+        style={{
+          clipPath: "polygon(30% 0, 100% 0, 100% 100%, 0% 100%)",
+          left: "55%",
+          background:
+            "radial-gradient(50% 50% at 50% 50%, rgba(36, 110, 185, 0.8) 0%, #246EB9 95.83%)",
+        }}
+        className="lg:fixed bottom-0 right-0 top-0 z-0"
+      />
+      <div
+        style={{
+          clipPath: "polygon(100% 50%, 0% 100%, 100% 100%)",
+          background:
+            "radial-gradient(50% 50% at 50% 50%, rgba(36, 110, 185, 0.8) 0%, #246EB9 95.83%)",
+        }}
+        className="fixed md:hidden bottom-0 right-0 top-0 left-0 z-0"
+      />
+        <div className="z-10 max-w-screen-xl px-4 py-16 mx-auto space-y-8 sm:px-6 lg:px-8 flex flex-col justify-around h-screen w-full">
           <div className="max-w-lg mx-auto text-center">
             <h2 className="text-3xl font-bold sm:text-4xl">My Work</h2>
           </div>
@@ -19,7 +37,6 @@ export default function Projects() {
               href=""
               style={{
                 backgroundImage: "url('/assets/image/portfolioSite.png')",
-                
               }}
             ></a>
 
@@ -28,7 +45,6 @@ export default function Projects() {
               href=""
               style={{
                 backgroundImage: "url('/assets/image/farrellFitness.png')",
-                
               }}
             ></a>
 
@@ -37,24 +53,20 @@ export default function Projects() {
               href=""
               style={{
                 backgroundImage: "url('/assets/image/cryptoTracker.png')",
-                
               }}
             ></a>
           </div>
 
           <div className="text-center">
             <a
-              className="inline-block px-5 py-3 text-sm font-medium text-bwhite bg-cta rounded-lg"
+              className="inline-block px-5 py-3 text-sm font-medium text-bwhite bg-primary rounded-lg"
               href=""
             >
               Find out more
             </a>
           </div>
         </div>
-      </section>
-      <div className="fixed bottom-0 w-full">
-        <Footer />
-      </div>
+      </main>
     </ContainerBlock>
   );
 }

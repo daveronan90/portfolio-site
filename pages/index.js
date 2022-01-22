@@ -1,6 +1,5 @@
 import Image from "next/image";
 import ContainerBlock from "../components/ContainerBlock";
-import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -15,11 +14,19 @@ export default function Home() {
           background:
             "radial-gradient(50% 50% at 50% 50%, rgba(36, 110, 185, 0.8) 0%, #246EB9 95.83%)",
         }}
-        className="fixed bottom-0 right-0 top-0 z-0"
+        className="lg:fixed bottom-0 right-0 top-0 z-0"
       />
-      <main className="container mx-auto h-screen relative flex flex-col justify-between">
-        <div className="flex w-full justify-center items-center h-full">
-          <div className="w-1/2 space-y-10">
+      <div
+        style={{
+          clipPath: "polygon(100% 50%, 0% 100%, 100% 100%)",
+          background:
+            "radial-gradient(50% 50% at 50% 50%, rgba(36, 110, 185, 0.8) 0%, #246EB9 95.83%)",
+        }}
+        className="fixed md:hidden bottom-0 right-0 top-0 left-0 z-0"
+      />
+      <main className="container mx-auto fixed inset-0 my-8 md:my-0 flex flex-col justify-between">
+        <div className="flex flex-col md:flex-row w-full justify-center items-center h-full">
+          <div className="scale-75 md:scale-100 md:w-1/2 space-y-10">
             <Image
               src="/assets/svg/wave.svg"
               width={64}
@@ -39,7 +46,7 @@ export default function Home() {
               where they can grow there business and reach a larger audience.
             </p>
           </div>
-          <div className="w-1/2 grid place-content-center h-full dark:text-bblack">
+          <div className="md:w-1/2 scale-50 md:scale-100 grid place-content-center h-full dark:text-bblack">
             <div
               style={{ boxShadow: "0px 50px 50px 20px rgba(0, 0, 0, 0.1)" }}
               className="rounded-2xl bg-bwhite h-80 w-96 flex flex-col justify-center items-center space-y-4 relative"
@@ -142,7 +149,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <Footer />
       </main>
     </ContainerBlock>
   );
